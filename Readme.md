@@ -88,16 +88,6 @@ You can map the input data array of the Command's _constructor_ with a plain lis
         }
     }
     
-    // ... or receive array of input data itself 
-        Class SomeCommand {
-            public function __construct(array $data = [
-                'propertyOne'   => 'A',
-                'propertyTwo'   => 'B',
-                'propertyThree' => 'C',
-            ]){
-                //...
-            }
-        }
 ```
 
 Of course, you can use default values!

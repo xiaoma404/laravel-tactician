@@ -128,19 +128,11 @@ class Bus implements CommandBusInterface
         $dependencies = [];
         $class = new ReflectionClass($command);
         foreach ($class->getConstructor()->getParameters() as $parameter) {
-            if ( $parameter->getPosition() == 0 && $parameter->getType() && $parameter->getType()->getName() === 'array') {
-                if ($input !== []) {
-                    $dependencies[] = $input;
-                } else {
-                    $dependencies[] = $this->getDefaultValueOrFail($parameter);
-                }
+            $name = $parameter->getName();
+            if (array_key_exists($name, $input)) {
+                $dependencies[] = $input[$name];
             } else {
-                $name = $parameter->getName();
-                if (array_key_exists($name, $input)) {
-                    $dependencies[] = $input[$name];
-                } else {
-                    $dependencies[] = $this->getDefaultValueOrFail($parameter);
-                }
+                $dependencies[] = $this->getDefaultValueOrFail($parameter);
             }
         }
 
