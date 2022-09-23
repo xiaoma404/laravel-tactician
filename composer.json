@@ -1,6 +1,6 @@
 {
-    "name": "vestin/laravel-tactician",
-    "description": "Laravel implementation of the Tactician Command Bus, fork from joselfonseca/laravel-tactician",
+    "name": "xiaoma404/laravel-tactician",
+    "description": "Laravel implementation of the Tactician Command Bus, fork from vestin/laravel-tactician",
     "keywords": [
       "laravel",
       "laravel-tactician",
